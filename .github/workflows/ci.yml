@@ -24,10 +24,10 @@ jobs:
           --health-cmd pg_isready
           --health-interval 10s
           --health-timeout 5s
-          --health-retries 5
-
+          --health-retries 5    
     steps:
-      uses: actions/checkout@v3
+      - name: Check out repository code
+        uses: actions/checkout@v3
 
       - name: Set up Go
         uses: actions/setup-go@v3
@@ -41,7 +41,7 @@ jobs:
           which migrate
           
 
-      -name: Run migrations
+      - name: Run migrations
         run: make migrateup
 
       - name: Test
