@@ -7,8 +7,6 @@ import (
 	"github.com/stretchr/testify/require"
 	"testing"
 	"time"
-
-	_ "github.com/stretchr/testify/require"
 )
 
 func createRandomEntry(t *testing.T) Entry {
